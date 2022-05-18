@@ -1,5 +1,6 @@
 ﻿using ChapterTF.Models;
 using ChapterTF.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,6 +10,7 @@ namespace ChapterTF.Controllers
 
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = "1")]
     public class LivroController : ControllerBase
     {
         private readonly LivroRepository _livroRepository;

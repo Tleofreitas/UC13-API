@@ -8,12 +8,12 @@ namespace ChapterTF.Controllers
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
-    public class UsuariosControllers : ControllerBase
+    public class UsuarioController : ControllerBase
     {
         private readonly IUsuarioRepository _iUsuarioRepository;
-        public UsuariosControllers(IUsuarioRepository usuarioRepository)
+        public UsuarioController(IUsuarioRepository iUsuarioRepository)
         {
-            _iUsuarioRepository = usuarioRepository;
+            _iUsuarioRepository = iUsuarioRepository;
         }
 
         [HttpGet]
@@ -62,7 +62,7 @@ namespace ChapterTF.Controllers
             }
         }
 
-        [HttpPut]
+        [HttpPut("{id}")]
         public IActionResult Alterar(int id, Usuario usuario)
         {
             try
